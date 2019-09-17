@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdvanceSearchController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="784.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exitProgram" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox alignment="CENTER_LEFT" prefHeight="748.0" prefWidth="784.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Advanced Search:" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="784.0">
+               <children>
+                  <MenuButton mnemonicParsing="false" text="Select City">
+                    <items>
+                      <MenuItem fx:id="selBeijing" mnemonicParsing="false" onAction="#setCityBeijing" text="Beijing" />
+                      <MenuItem fx:id="selChicago" mnemonicParsing="false" onAction="#setCityChicago" text="Chicago" />
+                        <MenuItem fx:id="selLasVegas" mnemonicParsing="false" onAction="#setCityLasVegas" text="Las Vegas" />
+                        <MenuItem fx:id="selLondon" mnemonicParsing="false" onAction="#setCityLondon" text="London" />
+                        <MenuItem fx:id="selMontreal" mnemonicParsing="false" onAction="#setCityMontreal" text="Montreal" />
+                        <MenuItem fx:id="selNewDelhi" mnemonicParsing="false" onAction="#setCityNewDelhi" text="New Delhi" />
+                        <MenuItem fx:id="selNewYorkCity" mnemonicParsing="false" onAction="#setCityNewYorkCity" text="New York City" />
+                        <MenuItem fx:id="selSanFrancisco" mnemonicParsing="false" onAction="#setCitySanFrancisco" text="San Francisco" />
+                        <MenuItem fx:id="selShanghai" mnemonicParsing="false" onAction="#setCityShanghai" text="Shanghai" />
+                    </items>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </MenuButton>
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonClicked" text="Search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="selCity" text="City: None Selected" />
+               </children>
+            </HBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Overall:" />
+                        <MenuButton mnemonicParsing="false">
+                          <items>
+                            <MenuItem fx:id="selOverall5" mnemonicParsing="false" onAction="#setOverall5" text="5" />
+                            <MenuItem fx:id="setOverallG45" mnemonicParsing="false" onAction="#setOverallG45" text="&gt;4.5" />
+                              <MenuItem fx:id="selOverallG4" mnemonicParsing="false" onAction="#setOverallG4" text="&gt;4" />
+                              <MenuItem fx:id="selOverallG35" mnemonicParsing="false" onAction="#setOverallG35" text="&gt;3.5" />
+                              <MenuItem fx:id="selOverallG3" mnemonicParsing="false" onAction="#setOverallG3" text="&gt;3" />
+                              <MenuItem fx:id="setOverallG25" mnemonicParsing="false" onAction="#setOverallG25" text="&gt;2.5" />
+                              <MenuItem fx:id="selOverallG2" mnemonicParsing="false" onAction="#setOverallG2" text="&gt;2" />
+                              <MenuItem fx:id="selOverallL2" mnemonicParsing="false" onAction="#setOverallL2" text="&lt;2" />
+                              <MenuItem fx:id="selOverall0" mnemonicParsing="false" onAction="#setOverall0" />
+                          </items>
+                        </MenuButton>
+                        <Label fx:id="selOverall" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Price:" />
+                        <MenuButton mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="selPrice5" mnemonicParsing="false" onAction="#setPrice5" text="5" />
+                              <MenuItem fx:id="setPriceG45" mnemonicParsing="false" onAction="#setPriceG45" text="&gt;4.5" />
+                              <MenuItem fx:id="selPriceG4" mnemonicParsing="false" onAction="#setPriceG4" text="&gt;4" />
+                              <MenuItem fx:id="selPriceG35" mnemonicParsing="false" onAction="#setPriceG35" text="&gt;3.5" />
+                              <MenuItem fx:id="selPriceG3" mnemonicParsing="false" onAction="#setPriceG3" text="&gt;3" />
+                              <MenuItem fx:id="setPriceG25" mnemonicParsing="false" onAction="#setPriceG25" text="&gt;2.5" />
+                              <MenuItem fx:id="selPriceG2" mnemonicParsing="false" onAction="#setPriceG2" text="&gt;2" />
+                              <MenuItem fx:id="selPriceL2" mnemonicParsing="false" onAction="#setPriceL2" text="&lt;2" />
+                              <MenuItem fx:id="selPrice0" mnemonicParsing="false" onAction="#setPrice0" />
+                           </items>
+                        </MenuButton>
+                        <Label fx:id="selPrice" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Cleanliness:" />
+                        <MenuButton mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="selClean5" mnemonicParsing="false" onAction="#setClean5" text="5" />
+                              <MenuItem fx:id="selCleanG45" mnemonicParsing="false" onAction="#setCleanG45" text="&gt;4.5" />
+                              <MenuItem fx:id="selCleanG4" mnemonicParsing="false" onAction="#setCleanG4" text="&gt;4" />
+                              <MenuItem fx:id="selCleanG35" mnemonicParsing="false" onAction="#setCleanG35" text="&gt;3.5" />
+                              <MenuItem fx:id="selCleanG3" mnemonicParsing="false" onAction="#setCleanG3" text="&gt;3" />
+                              <MenuItem fx:id="selCleanG25" mnemonicParsing="false" onAction="#setCleanG25" text="&gt;2.5" />
+                              <MenuItem fx:id="selCleanG2" mnemonicParsing="false" onAction="#setCleanG2" text="&gt;2" />
+                              <MenuItem fx:id="selCleanL2" mnemonicParsing="false" onAction="#setCleanL2" text="&lt;2" />
+                              <MenuItem fx:id="selClean0" mnemonicParsing="false" onAction="#setClean0" />
+                           </items>
+                        </MenuButton>
+                        <Label fx:id="selClean" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="144.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Location:" />
+                        <MenuButton mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="selLoc5" mnemonicParsing="false" onAction="#setLoc5" text="5" />
+                              <MenuItem fx:id="selLocG45" mnemonicParsing="false" onAction="#setLocG45" text="&gt;4.5" />
+                              <MenuItem fx:id="selLocG4" mnemonicParsing="false" onAction="#setLocG4" text="&gt;4" />
+                              <MenuItem fx:id="selLocG35" mnemonicParsing="false" onAction="#setLocG35" text="&gt;3.5" />
+                              <MenuItem fx:id="selLocG3" mnemonicParsing="false" onAction="#setLocG3" text="&gt;3" />
+                              <MenuItem fx:id="selLocG25" mnemonicParsing="false" onAction="#setLocG25" text="&gt;2.5" />
+                              <MenuItem fx:id="selLocG2" mnemonicParsing="false" onAction="#setLocG2" text="&gt;2" />
+                              <MenuItem fx:id="selLocL2" mnemonicParsing="false" onAction="#setLocL2" text="&lt;2" />
+                              <MenuItem fx:id="selLoc0" mnemonicParsing="false" onAction="#setLoc0" />
+                           </items>
+                        </MenuButton>
+                        <Label fx:id="selLoc" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="160.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Amenities:" />
+                        <MenuButton mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="selAmen5" mnemonicParsing="false" onAction="#setAmen5" text="5" />
+                              <MenuItem fx:id="selAmenG45" mnemonicParsing="false" onAction="#setAmenG45" text="&gt;4.5" />
+                              <MenuItem fx:id="selAmenG4" mnemonicParsing="false" onAction="#setAmenG4" text="&gt;4" />
+                              <MenuItem fx:id="selAmenG35" mnemonicParsing="false" onAction="#setAmenG35" text="&gt;3.5" />
+                              <MenuItem fx:id="selAmenG3" mnemonicParsing="false" onAction="#setAmenG3" text="&gt;3" />
+                              <MenuItem fx:id="selAmenG25" mnemonicParsing="false" onAction="#setAmenG25" text="&gt;2.5" />
+                              <MenuItem fx:id="selAmenG2" mnemonicParsing="false" onAction="#setAmenG2" text="&gt;2" />
+                              <MenuItem fx:id="selAmenL2" mnemonicParsing="false" onAction="#setAmenL2" text="&lt;2" />
+                              <MenuItem fx:id="selAmen0" mnemonicParsing="false" onAction="#setAmen0" />
+                           </items>
+                        </MenuButton>
+                        <Label fx:id="selAmen" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="170.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Service:" />
+                        <MenuButton mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="selServ5" mnemonicParsing="false" onAction="#setServ5" text="5" />
+                              <MenuItem fx:id="selServG45" mnemonicParsing="false" onAction="#setServG45" text="&gt;4.5" />
+                              <MenuItem fx:id="selServG4" mnemonicParsing="false" onAction="#setServG4" text="&gt;4" />
+                              <MenuItem fx:id="selServG35" mnemonicParsing="false" onAction="#setServG35" text="&gt;3.5" />
+                              <MenuItem fx:id="selServG3" mnemonicParsing="false" onAction="#setServG3" text="&gt;3" />
+                              <MenuItem fx:id="selServG25" mnemonicParsing="false" onAction="#setServG25" text="&gt;2.5" />
+                              <MenuItem fx:id="selServG2" mnemonicParsing="false" onAction="#setServG2" text="&gt;2" />
+                              <MenuItem fx:id="selServL2" mnemonicParsing="false" onAction="#setServL2" text="&lt;2" />
+                              <MenuItem fx:id="selServ0" mnemonicParsing="false" onAction="#setServ0" />
+                           </items>
+                        </MenuButton>
+                        <Label fx:id="selServ" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="176.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Room:" />
+                        <MenuButton mnemonicParsing="false">
+                           <items>
+                              <MenuItem fx:id="selRoom5" mnemonicParsing="false" onAction="#setRoom5" text="5" />
+                              <MenuItem fx:id="selRoomG45" mnemonicParsing="false" onAction="#setRoomG45" text="&gt;4.5" />
+                              <MenuItem fx:id="selRoomG4" mnemonicParsing="false" onAction="#setRoomG4" text="&gt;4" />
+                              <MenuItem fx:id="selRoomG35" mnemonicParsing="false" onAction="#setRoomG35" text="&gt;3.5" />
+                              <MenuItem fx:id="selRoomG3" mnemonicParsing="false" onAction="#setRoomG3" text="&gt;3" />
+                              <MenuItem fx:id="selRoomG25" mnemonicParsing="false" onAction="#setRoomG25" text="&gt;2.5" />
+                              <MenuItem fx:id="selRoomG2" mnemonicParsing="false" onAction="#setRoomG2" text="&gt;2" />
+                              <MenuItem fx:id="selRoomL2" mnemonicParsing="false" onAction="#setRoomL2" text="&lt;2" />
+                              <MenuItem fx:id="selRoom0" mnemonicParsing="false" onAction="#setRoom0" />
+                           </items>
+                        </MenuButton>
+                        <Label fx:id="selRoom" text="N/A" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <ScrollPane prefHeight="236.0" prefWidth="784.0">
+               <content>
+                  <AnchorPane prefHeight="233.0" prefWidth="769.0">
+                     <children>
+                        <ListView fx:id="advancedDisplayList" prefHeight="140.0" prefWidth="769.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

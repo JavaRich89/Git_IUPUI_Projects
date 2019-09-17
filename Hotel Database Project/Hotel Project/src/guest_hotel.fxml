@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuestController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="784.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#exitProgram" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox alignment="CENTER" prefHeight="748.0" prefWidth="784.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="784.0">
+               <children>
+                  <Label text="Enter Hotel Name:">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="searchField" prefHeight="25.0" prefWidth="348.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonClicked" text="Search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="advancedSearchButton" mnemonicParsing="false" onAction="#advancedSearchButtonClicked" text="Advanced Search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="354.0" prefWidth="784.0">
+               <children>
+                  <Label text="OR">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <MenuButton fx:id="selCountry" mnemonicParsing="false" text="Select Country">
+                          <items>
+                            <MenuItem fx:id="selChina" mnemonicParsing="false" onAction="#searchChinaButtonClicked" text="China" />
+                            <MenuItem fx:id="selCA" mnemonicParsing="false" onAction="#searchCanadaButtonClicked" text="Canada" />
+                              <MenuItem fx:id="selIndia" mnemonicParsing="false" onAction="#searchIndiaButtonClicked" text="India" />
+                              <MenuItem fx:id="selUS" mnemonicParsing="false" onAction="#searchUnitedStatesButtonClicked" text="United States" />
+                              <MenuItem fx:id="selUK" mnemonicParsing="false" onAction="#searchUnitedKingdomButtonClicked" text="United Kingdom" />
+                          </items>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </MenuButton>
+                        <MenuButton fx:id="selState" contentDisplay="BOTTOM" mnemonicParsing="false" text="Select State" visible="false">
+                          <items>
+                            <MenuItem fx:id="selCalifornia" mnemonicParsing="false" onAction="#searchCaliforniaButtonClicked" text="California" />
+                            <MenuItem fx:id="selIllinois" mnemonicParsing="false" onAction="#searchIllinoisButtonClicked" text="Illinois" />
+                              <MenuItem fx:id="selNevada" mnemonicParsing="false" onAction="#searchNevadaButtonClicked" text="Nevada" />
+                              <MenuItem fx:id="selNewYork" mnemonicParsing="false" onAction="#searchNewYorkButtonClicked" text="New York" />
+                          </items>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </MenuButton>
+                        <MenuButton fx:id="selCity" mnemonicParsing="false" text="Select City" visible="false">
+                          <items>
+                            <MenuItem fx:id="selBeijing" mnemonicParsing="false" onAction="#searchBeijingButtonClicked" text="Beijing" />
+                            <MenuItem fx:id="selChicago" mnemonicParsing="false" onAction="#searchChicagoButtonClicked" text="Chicago" />
+                              <MenuItem fx:id="selLasVegas" mnemonicParsing="false" onAction="#searchLasVegasButtonClicked" text="Las Vegas" />
+                              <MenuItem fx:id="selLondon" mnemonicParsing="false" onAction="#searchLondonButtonClicked" text="London" />
+                              <MenuItem fx:id="selMontreal" mnemonicParsing="false" onAction="#searchMontrealButtonClicked" text="Montreal" />
+                              <MenuItem fx:id="selNewDelhi" mnemonicParsing="false" onAction="#searchNewDelhiButtonClicked" text="New Delhi" />
+                              <MenuItem fx:id="selNewYorkCity" mnemonicParsing="false" onAction="#searchNewYorkCityButtonClicked" text="New York City" />
+                              <MenuItem fx:id="selSanFrancisco" mnemonicParsing="false" onAction="#searchSanFranciscoButtonClicked" text="San Francisco" />
+                              <MenuItem fx:id="selShanghai" mnemonicParsing="false" onAction="#searchShanghaiButtonClicked" text="Shanghai" />
+                          </items>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+                  <ScrollPane prefHeight="236.0" prefWidth="784.0">
+                    <content>
+                      <AnchorPane prefHeight="233.0" prefWidth="769.0">
+                           <children>
+                              <ListView fx:id="displayList" prefHeight="140.0" prefWidth="769.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="270.0" prefWidth="784.0">
+               <children>
+                  <Button fx:id="showRatingButton" mnemonicParsing="false" onAction="#showRatingButtonClicked" text="Show Rating" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Overall Rating:" />
+                        <Label fx:id="allLabel" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="226.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Price:" />
+                        <Label fx:id="priceLabel" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Cleanliness:" />
+                        <Label fx:id="cleanLabel" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="212.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Location:" />
+                        <Label fx:id="locLabel" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Amenities:" />
+                        <Label fx:id="amenLabel" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="145.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Service:" />
+                        <Label fx:id="servLabel" text="N/A" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="95.0" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Room:" />
+                        <Label fx:id="roomLabel" text="N/A" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
