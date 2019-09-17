@@ -1,0 +1,104 @@
+.App {
+  text-align: center;
+}
+
+.nav-spacing {
+  margin-right: 10px;
+  color: black;
+
+}
+
+.nav-center {
+  margin-left: -100px;
+}
+
+.logo {
+  opacity: 1.0;
+  transition: height 500ms 0ms, opacity 500ms 500ms;
+}
+
+.product-wrapper {
+  margin-left: 6%;
+  margin-right: 6%;
+  padding-bottom: 3%;
+}
+
+.search-wrapper {
+  margin-left: 12.5%;
+
+}
+.active {
+  color: white;
+}
+.product-card-wrapper {
+  margin-left: 4.3%;
+  margin-right: 6%;
+}
+
+.admin-form-wrapper {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.list-wrapper {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.header-wrapper {
+  padding-top: 2.5%;
+  padding-bottom: 1%;
+}
+
+.logo.hide {
+  transition: height 500ms 500ms, opacity 500ms 0ms;
+  opacity: 0.0;
+  height: 0px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 10s linear;
+  height: 35vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.box-shadow {
+  transition: box-shadow .3s;
+  border-radius:10px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.box-shadow:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.bottomDiv{
+  position:relative;
+  bottom: 200px;
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
